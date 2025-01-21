@@ -14,16 +14,23 @@ $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗
 
  find issues that fix opinions only growing in value-- fixed <br>
  colorbar is not stable between 0 and 1 --- fixed <br>
+
+ NOTE: function is able to go out of bounds of [0,1], i cut it so that alsthough in theory 2 opinions can push each other to the extreme it can not go over 1 or below 0
  
  ## trying to find a paremeter for polarization/radicalization/consent --- done? <br>
- find parameter for steady state.. <br>
+ find parameter for steady state.. done <br>
  memory of old opinion list compared to new? if true stop?<br>
- ---> doesnt work... because of converging <br>
+ doesnt work... because of it being asymptotic <br>
+ function for average changes over time.. once change is smaller than a theshold stop <br>
+ 
+ 
  
 
  polarization/radicalization/consent over mean and varianz of opinion list:<br>
 
- polarization:?<br>
+ 
+
+ polarization:? mostly no steady state <br> 
  varianz opinion list > 𝜌_𝑖 ?<br>
  radicalization:?<br>
  mean opinion list not > 0.5 or <0.5<br>
@@ -32,7 +39,9 @@ $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗
  mean opinion list around 0.5 <br>
  varianz opinion list << 𝜌_𝑖 ?<br>
 
- ## testing out model for different parameters:
+ added a bar chart
+
+ ## testing out model for different parameters--> on it.. found polarization and consent so far.. also slight drifts in consent towards radicalisation depending on start conditions:
 
  𝑥_𝑖 (𝑡),𝑥_𝑗 (𝑡) ∈ [0,1] --> how heterogen?<br>
 𝑤_𝑖𝑗 ∈ [0,1] --> first homogen later how heterogen/asymmetrical (social influence parameter if heterogen)<br>
@@ -44,10 +53,12 @@ $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗
 different network struktures:<br>
 random net,all to all, grid<br>
 
- without repulsion cutting function: if $|𝑥_{𝑖𝑗}|>𝜌_{i}\text{-->   }𝑥_𝑖(𝑡+1)=𝑥_𝑖$<br>
 
  writing down table of what has been calculated with results:<br>
 
+ ## adding update function without repulsion: --done
+ ## adding different network struktures: 
+ nothing 
 
  ## adding a modified update function for complex contagion:
   $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑖𝑗} ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
