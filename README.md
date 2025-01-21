@@ -15,9 +15,11 @@ $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗
  find issues that fix opinions only growing in value-- fixed <br>
  colorbar is not stable between 0 and 1 --- fixed <br>
  
- ## trying to find a paremeter for polarization/radicalization/consent --- <br>
+ ## trying to find a paremeter for polarization/radicalization/consent --- done? <br>
  find parameter for steady state.. <br>
  memory of old opinion list compared to new? if true stop?<br>
+ ---> doesnt work... because of converging <br>
+ 
 
  polarization/radicalization/consent over mean and varianz of opinion list:<br>
 
