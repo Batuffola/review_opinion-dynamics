@@ -41,6 +41,10 @@ $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗
 
  added a bar chart
 
+ tried different metrics for polarisation.. most of them didnt work because of too strong parameter deoendencies.. 
+
+ bimodalität als maßfur polarisation
+
  ## testing out model for different parameters--> on it.. found polarization and consent so far.. also slight drifts in consent towards radicalisation depending on start conditions:
 
  𝑥_𝑖 (𝑡),𝑥_𝑗 (𝑡) ∈ [0,1] --> how heterogen?<br>
@@ -59,12 +63,16 @@ random net,all to all, grid<br>
  ## adding update function without repulsion: --done
  ## adding different network struktures: 
  nothing 
+ scalefree
+ community /stoch. block model
 
  ## adding a modified update function for complex contagion:
   $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑖𝑗} ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
  shifting the tanhyp before the sum
  $<𝑥_{𝑗n}>  = \dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
- $𝑥_𝑖(t+1) = 𝑥_𝑖 + 𝛽_𝑖 ∙ tanh( -𝛼_𝑖 (\dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} -  𝑥_𝑖 ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
+  --> $𝑥_𝑖(t+1) = 𝑥_𝑖 +   tanh( 𝛽_𝑖 (\dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} -  𝑥_𝑖 ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
 
  oder?<br>
    $𝑥_𝑖(t+1) = 𝑥_𝑖 + 𝛽_𝑖 ∙tanh⁡(\dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑖𝑗} ∙ (−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖)))$<br>
+ ## later combination of single and complex to have beyond pairwise possibilities: 
+ ensamble opinion of clusters as complex contagion additional to single contagion pairwise
