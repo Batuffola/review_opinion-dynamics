@@ -45,8 +45,7 @@ $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗
 
  bimodalität als maßfur polarisation
 
- ## testing out model for different parameters--> on it.. found polarization and consent so far.. also slight drifts in consent towards radicalisation depending on start conditions:
-
+ ## testing out model for different parameters--> kind of done
  𝑥_𝑖 (𝑡),𝑥_𝑗 (𝑡) ∈ [0,1] --> how heterogen?<br>
 𝑤_𝑖𝑗 ∈ [0,1] --> first homogen later how heterogen/asymmetrical (social influence parameter if heterogen)<br>
 
@@ -61,8 +60,8 @@ random net,all to all, grid<br>
  writing down table of what has been calculated with results:<br>
 
  ## adding update function without repulsion: --done
- ## adding different network struktures: 
- nothing 
+ ## adding different network struktures: -- kind of done.. testing
+ random 
  scalefree
  community /stoch. block model
 
