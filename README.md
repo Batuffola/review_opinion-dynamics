@@ -102,6 +102,8 @@ random net,all to all, grid<br>
                                          does complex and rewiring even make sense? or complex repulsion?   <br>
                                          according to me only makes sense again in pairwise interactions <br>
 
+  - code is a giant mess.. needs clean up baaaaadly
+
 
 
 
