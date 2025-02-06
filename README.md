@@ -81,13 +81,31 @@ random net,all to all, grid<br>
  
   redoing all graphics with that
 
- ## adding a modified update function for complex contagion:
+ ## adding a modified update function for complex contagion: kind of added but not tested
   $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑖𝑗} ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
  shifting the tanhyp before the sum
  $<𝑥_{𝑗n}>  = \dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
-  --> $𝑥_𝑖(t+1) = 𝑥_𝑖 +   tanh( 𝛽_𝑖 (\dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} -  𝑥_𝑖 ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
+  ## --> $𝑥_𝑖(t+1) = 𝑥_𝑖 +   tanh( 𝛽_𝑖 (\dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} -  𝑥_𝑖 ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
 
  oder?<br>
    $𝑥_𝑖(t+1) = 𝑥_𝑖 + 𝛽_𝑖 ∙tanh⁡(\dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑖𝑗} ∙ (−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖)))$<br>
+
+ ## Questions:
+  + how many nodes in a network: 200<br>
+  - stochastic block model creates issues: not compatible with leaving the avg degree the same as in other networktypes: too sparse..<br>
+                                           how to make it comparable?<br>
+                                           what should i do about weigts.. they are set to random.. but now inter and intra weights? <br>
+  - complex contagion: this function:? <br>
+    $𝑥_𝑖(t+1) = 𝑥_𝑖 +   tanh( 𝛽_𝑖 (\dfrac{1}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑗} -  𝑥_𝑖 ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
+
+  - how many combinations should i allow:<br>
+                                         does complex and rewiring even make sense? or complex repulsion?   <br>
+                                         according to me only makes sense again in pairwise interactions <br>
+
+
+
+
+
+ 
  ## later combination of single and complex to have beyond pairwise possibilities: 
  ensamble opinion of clusters as complex contagion additional to single contagion pairwise
