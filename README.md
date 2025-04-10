@@ -1,6 +1,35 @@
 # review_opinion-dynamics
+Opinion dynamics are still often modeled using single contagion frameworks such as
+SIR models. However, it is well established that the relationship between exposure
+to a number of people holding a particular opinion and subsequent changes in an
+individual’s opinion is nonlinear. This relationship is frequently expressed using
+sigmoidal functions or hyperbolic tangent (tanh) functions. Numerous studies have
+demonstrated that a threshold number of individuals holding a certain opinion is
+necessary to induce a change in opinion. To address the complexities of real-world
+opinion dynamics, several approaches incorporating different assumptions have been
+developed to model complex contagion. These include:
+- **Threshold Models:** These models account for the necessity of a certain pro-
+portion of neighbors adopting an opinion before an individual changes their own
+opinion.
+- **Social Influence Models:** These include mechanisms of social reinforcement
+and initial beliefs, capturing the interplay between peer influence and individual
+predispositions.
+- **Dynamic Networks:** Networks that evolve over time, with edges forming and
+dissolving to reflect changing relationships and interactions.
+- **Attraction and Distraction Forces:** Models that simulate the forces between
+differing opinions, influencing the likelihood of opinion change.
+- **Echo Chambers and Hubs:** Network structures that highlight the role of tightly-
+knit groups (echo chambers) and highly connected individuals (hubs) in the spread
+of opinions.<br>
+
+This review aims to compare these diverse modeling approaches and integrate empirical data to enhance the understanding and predictive power of opinion dynamics models. Additionally, I intend to test out the assumptions underlying these models and explore their paradoxes, providing a critical examination of their applicability and limitations in capturing the intricacies of complex contagion in opinion dynamics.
+By merging theoretical models with empirical observations, we seek to develop a more comprehensive framework for understanding and predicting opinion spread.<br>
+
+I developed a flexible agent-based model in Python, enabling the simulation of user interactions on social graphs under varied assumptions drawn from existing opinion dynamics frameworks. The model made it possible to compare key social mechanisms—such as social influence, attraction/repulsion to differing opinions, and thresholds for contagion—within a unified framework. I tested these models on different network types involving large-scale and adaptive network structures, and visualized opinion clustering to quantitatively assess polarization.
 
 ## implementing the model with the update function: --- done <br>
+
+
 $𝑥_𝑖(t+1) = 𝑥_𝑖 + \dfrac{𝛽_𝑖}{∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}}  ∑_{𝑗≠𝑖} 𝑤_{𝑖𝑗}   𝑥_{𝑖𝑗} ∙ tanh⁡(−𝛼_𝑖 (|𝑥_{𝑖𝑗} | − 𝜌_𝑖))$<br>
 
 𝑥_𝑖 (𝑡),𝑥_𝑗 (𝑡) ∈ [0,1] --> Opinions of individuum 𝑥_𝑖 and its neighbors<br>
